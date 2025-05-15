@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: flask-app
+    env: python
+    buildCommand: |
+      pip install --upgrade pip
+      pip install numpy==1.24.4
+      pip install -r requirements.txt
+    startCommand: gunicorn app:app
